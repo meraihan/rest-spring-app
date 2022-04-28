@@ -1,0 +1,219 @@
+ <!DOCTYPE html>                                             
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!--this meta line is used to make html fit on each screen -->
+  <!-- I used Bootstrap as a css framewok-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- to access html element, i use tag name ex: body{ and put scc styles that i want to work on}-->
+<style>
+	body{ 
+		background-color: #9C9B9B; <!-- changing body to new color, darkgrey it's written in hexadecimal code -->
+		color: black; <!-- setting all body content to be black -->
+		font-family: poppins;<!--setting new font , poppins is very clear and looks good  -->
+	}
+div .p-2 a{ <!-- dot is used to refer to class name and change its style in css -->
+	text-decoration: none; 
+	font-size: 18px;
+	color:white;
+	font-weight: bold;
+}
+div .p-2 a:hover{ <!--hover means what happens when user drag mouse to the element , here im changing logout and printpage -->
+	color: darkblue;
+}
+nav{
+	padding: 0px ; <!-- setting padding and margin to 0 avoid our interface to be interracted with default browsers setting -->
+	margin: 0px;
+	}
+nav ul{ <!-- here im setting navufation menu to the left-->
+	float: left;
+
+}
+nav ul li{ <!-- here im putting navigation menu on line with no ther style just horizonally aligned -->
+	display: inline-block;
+	list-style: none;
+	padding: 0px 32px;
+}
+nav ul li { <!--im setting color to black and  font size to be bigger 18px, all in uppercase letters and bold -->
+	text-decoration: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: black;
+	font-weight: bold;
+	
+}
+nav ul li a .nav-link{
+	padding: 0px 50px;
+}
+nav ul li :hover{ <!--here i used hover so that everytime user drag mouse over it become white -->
+color: white;
+text-decoration: none;
+}
+nav ul li .active{
+	color: blue;
+}
+label{
+	font-weight: bold;
+}
+.schedule a{ 
+	color: black;
+}
+</style>
+
+</head> <!-- the end of html header-->
+<body><!-- starting to design the body part -->
+
+	<div class="container-fluid bg-dark navbar-dark"><!--i used class to make a good design   -->
+		<!-- the design for ID Dropdown selection-->
+<div class="row">
+ <div class="col-sm-9">
+ 	<div class="d-flex justify-content-start"><!-- set the content to the starting -->
+    		<div class="p-2">
+    	<select class="form-control" id="sel1" name="sellist1"> <!-- i used select tag to mention IDs, if ypu have IDS yu want to select from you can change them with 1, 2, 3, and put your IDs you want to be dropped down when you click ID -->
+        <option>ID</option><!-- In this options it's where you change the ID  -->
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select></div>
+    		<div class="p-2 justify-content-end"> <!-- justifying search input to the end of the row-->
+    			<form>
+  					<input type="text" name="search" placeholder="Search.."> <!--used input text to be able to type what you want to search -->
+  					<button class="btn btn-success" type="submit">Search</button> <!-- the search button to press -->
+				</form>
+    		</div>
+	</div>
+ 	
+ </div>
+      <div class="col-sm-3 "> <!-- designing flex to hold print and logout buttons-->
+      	<div class="d-flex justify-content-start"> 
+    		<div class="p-2 "><a href="#">Print Page</a></div>
+    		<div class="p-2 "><a href="#">Log out</a></div>
+	 	</div>
+      </div>
+</div>
+
+<!-- here i started to work on navigation menu, bg means backgrou i set to dark and div was divisions for each section i was working on i gave each section a name by class attribute you will see often and by the if was easy to design css-->
+
+</div>
+<div class="container-fluid bg-dark navbar-dark">
+<nav class=" navbar navbar-expand-md "> <!-- i used this to set responsive menu that can work o all devices, you will see that when you set to small screen menu will be hidden and be set to menu bar-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <!-- here i set the button to appear when user view on small screen -->
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar"> <!-- ul sets unordered list and li for list, it helps with listing navigation and they can be desined well, like horizontally and colors in css-->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a><!--href should be the reference to the new page that user should go on when he click home or any other button but since we dont have other pages yet, i used # to keep buttons working -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Data</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Medication</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" href="#">Health History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Schedule Appointment</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Messages</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+</div>
+<br>
+<div class="container" style="margin-top: 10%;">
+	<div class="row">
+      <div class="col-sm-3">
+      		<label> Name: </label>
+        <input type="text" name="name"><br><br>
+        <img src="../static/om.jpg" width="120px" height="120px"><br><br> <!--here is the first picture under name-->
+        <h4> Patient Summary</h4> 
+    <ul> <!--here i set list using ul and li tags  -->
+        <li> Allergies</li>
+        <li> Immunization</li> 
+        <li> Medical History</li>
+        <li> Problem List: 
+        		<ul>
+        			<li>xxxxx xxxx</li>
+        			<li>xxxxxxxx </li>
+        			<li>xxxxxxxxx</li>
+        			<li>xxxxxxxxx</li>
+        		</ul>
+        </li>
+    </ul>
+
+      </div>
+      <div class="col-sm-6">
+      	<label>Heart: </label>
+      	<img src="../static/heart.png" width="120px" height="120px"><br><br> <!--here is another image of heart description , you can change it here in src" " -->
+      	<br><button >Quick Link</button> <br><br>
+   <div class="row">
+      <div class="col schedule" ><a href="#"><strong>Schedule an Appointment</strong></a></div>
+      <div class="col" ><strong>xxxxxx xx</strong></div> <br><br>
+  </div>
+  <button >Next Appointment </button> <br><br>
+
+   <!--here i used column divisions to make a full columns about date, location and others  -->
+    	<div class="row">
+      <div class="col-sm">Date/Time</div>
+      <div class="col-sm" >Location</div>
+      <div class="col-sm" >Doctor</div>
+      <div class="col-sm" >.</div>
+    </div>
+    	<hr style="color: black; border-width: 2px;"> <!--hr tag is used to put line, and it width as 2px -->
+
+    	<div class="row"> <!-- here is where the answers under the line are placed -->
+      <div class="col-sm">xxxxx</div>
+      <div class="col-sm" >xxxxxxx</div>
+      <div class="col-sm" >xxxxxx</div>
+      <div class="col-sm" >x</div>
+    </div>
+
+    	<button >Current Medication </button> <br><br><!--the button for current medecine -->
+
+   
+    	<div class="row"><!--whenever i use row is to set elements on the same rom and having columns inside makes it go on different parts but still, same row -->
+      <div class="col-sm">Name</div>
+      <div class="col-sm" >Start Date</div>
+      <div class="co++
+
+      l-sm" >Prescribed By</div>
+      <div class="col-sm" >Source</div>
+    </div>
+    	<hr style="color: black; border-width: 2px;">
+
+    	<div class="row">
+      <div class="col-sm">
+      	xxxxx<br>xxxxxx<br>+
+      </div>
+      <div class="col-sm" >xxxxxxx<br>xxxxxx</div>
+      <div class="col-sm" >xxxxxx<br>xxxxxx</div>
+      <div class="col-sm" >xxxxxxxxxx<br>xxxxxxx</div>
+    </div>
+      </div>
+      <div class="col-sm-3" >
+      	<label>Lung: </label>
+      	<img src="../static/lung.png" width="120px" height="120px"><br><br> <!--this ts where you define the last image, you can change it here  -->
+      	<label style="float:">Message</label><br><!--  message as a label to textarea user use to write comment and send using send button -->
+      	<textarea rows="15" cols="30" >
+      		
+      	</textarea> <!--this tag is used to define textarea and setting rows and columns define its size and user can type in and send using send button below-->
+		<button type="submit"> send  </button>
+      </div>
+    </div>
+</div>
+
+
+
+
+</body> <!-- losing tag to end bosy section-->
+</html><!--end of html -->

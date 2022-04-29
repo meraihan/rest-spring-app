@@ -17,13 +17,16 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(final ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/patient").setViewName("Patient_interface.html");
+        registry.addViewController("/patient/list").setViewName("patients.html");
         registry.addViewController("/doctor").setViewName("doctor_interface.html");
+        registry.addViewController("/doctor/list").setViewName("doctors.html");
+        registry.addViewController("/appointment").setViewName("appointment.html");
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         if (!registry.hasMappingForPattern("/static/**")) {
-            registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+            registry.addResourceHandler("/static/**","/static/js/**").addResourceLocations("classpath:/static/");
         }
     }
 
